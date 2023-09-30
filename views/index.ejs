@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>index file</h1>
+    <%if(user!=''){%>
+<table>
+    <thead>
+        <th>sno</th>
+        <th>name</th>
+        <th>email</th>
+        <th>Action</th>
+    </thead>
+    <%user.forEach((row,index)=>{%>
+    <tbody>
+        <th><%=index%></th>
+        <th><%=row.name%></th>
+        <th><%=row.email%></th>
+        <th><a href="/edit/<%=row.id%>">Update</a> || <a href="/delete/<%=row.id%>">Delete</a></th>
+    </tbody>
+    <%})%>
+</table>
+    <%}else{%>
+        <h1>No user found</h1>
+    <%}%>
+
+
+    <!-- <%=user%> -->
+
+
+</body>
+</html>
